@@ -317,12 +317,22 @@ export default class Panel extends React.Component {
             <span class="highlight">First Order Streets: </span> Pre-directions are assigned for first order/ baseline streets to distinguish it from the rest of the
             streets. These should not be assigned the quadrants as those were the basis on which the quadrants.
             were formed.
+            <br />
+            <span class="highlight">   W Ngojang Zhung Lam</span>
+            It may be noted that the Ngojang Zhung Lam is a baseline connecting the reference points and
+            moving towards the west from the reference point.
           </Typography>
           <br />
           <Typography>
             <span class="highlight">Second Order Streets:
             </span> The primary streets apart from the baselines and caters to bigger catchments fall in this category.
-            The type assigned is Lam and it must reflect the quadrant that the stretch falls in
+            The type assigned is Lam and it must reflect the quadrant that the stretch falls in.
+            <span class="highlight">  Gatshel Lam SE</span>
+            <br />
+
+            It may be noted that the Gatshel Lam SE is a main street connecting the baseline and falls in the
+            south east quadrant.
+
           </Typography>
           <br></br>
           <Typography>
@@ -332,19 +342,108 @@ export default class Panel extends React.Component {
             were generated as provisions for future road extensions.
             The name of the Zur Lam is subsequently inherited from the parent street (Lam) and the number
             is assigned based on the provision kept.
+            <br />
+            <span class="highlight">Chhogyal Zur Lam 1 SE</span>
+            <br />
+            It may be noted that the Chhogyal Zur Lam 1 SE is a secondary street connecting the main
+            street Chhogyal Lam SE on segment number 1 and falls in the south east quadrant.
+
           </Typography>
           <br />
           <Typography>
             <span class="highlight">Fourth Order Streets:
             </span>Streets that branch out further from the Zur Lam are assigned suffixes while the number is
             inherited from the parent Zur Lam.
+            <br />
+            <span class="highlight">Losel Zur Lam 1A SE</span>
+            <br />
+            It may be noted that the Losel Zur Lam 1A SE is a first third order street connecting the
+            secondary street Losel Zur Lam 1 SE and falls in the south east quadrant.
           </Typography>
           <br />
           <Typography>
             <span class="highlight">Fifth Order Streets:
             </span>Streets that branch out further from the fourth order streets are considered as the access road.
             Fifth order streets have no street names.
+
           </Typography>
+        </section>
+        <section id="plot">
+          <Typography variant="h4">PLOT NUMBERING</Typography>
+          <br></br>
+          <Typography>
+            These general principles will hold while numbering the plots:
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">1. </span> Plot with the area equal to or less than 19 decimal (0.189 Acres) will be assigned with
+            one plot number.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">2.  </span> Plot with area equal to multiple of 10 decimal (0.099 Acres) will be assigned with the
+            plot numbers equal to the multiple of 10 only if the plot is undeveloped or under
+            developed.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">3. </span> The streets of all orders can have contribute to plot numbering except the fifth order
+            streets.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">4. </span> Numbering should always commence from reference point considering its number as
+            100.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">5.  </span> For second order streets, the nearest end to the main reference point is considered as
+            new shifted reference point.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">6. </span> For all third and fourth order streets, the reference point is the originating point of
+            second and third order streets respectively.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">7. </span> Even numbers should be assigned to the right side of streets and odd numbers to the left side as
+            travel away from reference point of street.
+          </Typography>
+          <br />
+        </section>
+        <section id="building">
+          <Typography variant="h4">BUILDING ADDRESS</Typography>
+          <br></br>
+          <Typography>
+            Building address is a unique entity that consists of the street name and building number which is
+            unique in the street.
+            <br />
+            <span class="highlight"> 102, E Phendey Lam</span>
+            <br />
+            Building is the first plot in right hand side of the street name E Phendey Lam from reference
+            point with building number 102.
+          </Typography>
+          <br />
+          <Typography variant="h6">9.1 Building Numbering</Typography>
+          <Typography>
+            These general principles hold while numbering the house:
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">1. </span> The building should hold same number and street name as plot.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">2.  </span> If the plot has more than one plot number, the building will be assigned with building
+            number and street name nearest to main entrance.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">3. </span> If building has multiple entrance, the entrance facing the highest order street will be
+            considered as main entrance.
+          </Typography>
+          <br></br>
         </section>
       </div>
     );

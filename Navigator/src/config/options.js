@@ -23,6 +23,14 @@ const chapters = {
         id: 'type',
         opacity: 0,
       },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -64,6 +72,14 @@ const chapters = {
       },
       {
         id: 'name',
+        opacity: 0,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
         opacity: 0,
       },
     ],
@@ -109,6 +125,14 @@ const chapters = {
         id: 'name',
         opacity: 0,
       },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -150,6 +174,14 @@ const chapters = {
       },
       {
         id: 'name',
+        opacity: 0,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
         opacity: 0,
       },
     ],
@@ -195,6 +227,14 @@ const chapters = {
         id: 'name',
         opacity: 0,
       },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -236,6 +276,14 @@ const chapters = {
       },
       {
         id: 'name',
+        opacity: 0,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
         opacity: 0,
       },
     ],
@@ -280,6 +328,116 @@ const chapters = {
       {
         id: 'name',
         opacity: 1,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
+      },
+    ],
+    layout: [
+      {
+        id: 'labels',
+        visibility: 'none',
+      },
+
+    ],
+    location: {
+      center: [90.48732307977042, 26.872462554684148],
+      zoom: 13,
+      pitch: 0,
+      bearing: 0.13,
+      duration: 800,
+      essential: true
+    },
+  },
+  plot: {
+    paint: [
+      {
+        id: 'boundary',
+        opacity: 0,
+      },
+      {
+        id: 'baseline',
+        opacity: 0,
+      },
+      {
+        id: 'quadrant',
+        opacity: 0,
+      },
+      {
+        id: 'order',
+        opacity: 0,
+      },
+      {
+        id: 'type',
+        opacity: 0,
+      },
+      {
+        id: 'name',
+        opacity: 1,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
+      },
+    ],
+    layout: [
+      {
+        id: 'labels',
+        visibility: 'none',
+      },
+
+    ],
+    location: {
+      center: [90.48732307977042, 26.872462554684148],
+      zoom: 13,
+      pitch: 0,
+      bearing: 0.13,
+      duration: 800,
+      essential: true
+    },
+  },
+  building: {
+    paint: [
+      {
+        id: 'boundary',
+        opacity: 0,
+      },
+      {
+        id: 'baseline',
+        opacity: 0,
+      },
+      {
+        id: 'quadrant',
+        opacity: 0,
+      },
+      {
+        id: 'order',
+        opacity: 0,
+      },
+      {
+        id: 'type',
+        opacity: 0,
+      },
+      {
+        id: 'name',
+        opacity: 1,
+      },
+      {
+        id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'building',
+        opacity: 0,
       },
     ],
     layout: [
@@ -411,6 +569,28 @@ const tooltipConfig = {
     ],
 
   },
+  plot: {
+    layer: 'plot',
+    features: [
+      {
+        label: '',
+        value: 'Address',
+        type: 'inline',
+      },
+    ],
+
+  },
+  building: {
+    layer: 'building',
+    features: [
+      {
+        label: '',
+        value: 'Address',
+        type: 'inline',
+      },
+    ],
+
+  },
 
 };
 
@@ -433,6 +613,8 @@ const chapterLayers = {
   order: ['order'],
   type: ['type'],
   name: ['name'],
+  plot: ['plot'],
+  building: ['building'],
 };
 
 
