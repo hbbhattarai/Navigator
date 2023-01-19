@@ -240,7 +240,7 @@ export default class Panel extends React.Component {
             <span class="highlight">3. </span> Create an exhaustive list of street types to be used.
           </Typography>
           <br />
-          <Typography variant="h6">6.2  Street Types for Current Assignmen</Typography>
+          <Typography variant="h6">6.2  Street Types for Current Assignment</Typography>
           <Typography>
             The streets are classified into following types:
           </Typography>
@@ -261,6 +261,90 @@ export default class Panel extends React.Component {
             <span class="highlight">4. </span> Zur Lam with suffix: The fourth order streets.
           </Typography>
           <br />
+        </section>
+        <section id="name">
+          <Typography variant="h4">STREET NAMEING</Typography>
+          <br></br>
+          <Typography>
+            Street naming in the current scenario may seem manageable and organized at the current stage.
+            Over time, as the area grows, new streets will start emerging and old ones may be rerouted. In
+            the absence of a street naming mechanism in place, the task can become complicated and
+            disorganized. The problems can be manifested in a form of lack of coordination, weakened
+            monitoring & management due to frequent name changes, non-sequential numbering and
+            duplication. Adherence to the guideline below should alleviate such problems in future.
+          </Typography>
+          <br />
+          <Typography variant="h6">7.1 General Principles of Assigning Street Types</Typography>
+          <Typography>
+            The principal identifying component of a full street name, which in most cases should uniquely
+            distinguish a street from all others.
+            <br />
+            A full street name shall be unique and used only once in any locality. Except for historically
+            significant names, a street name should be easy to read, spell, and pronounce especially during
+            emergencies (even for children). The following must be avoided at all times:
+
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">1. </span> Names that tend to be mispronounced or misspelled or are difficult to pronounce or spell.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">2.  </span> Two-word names or one-word names that can be confused as two-word names.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">3. </span> Using punctuation or special characters, as usage is reserved in some of the database
+            programs.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">4. </span> A continuous street should have only one name signed irrespective of change in direction.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">5. </span>Street names should be made up of a single word of 15 characters or less to minimize the
+            data entry error.
+          </Typography>
+          <br />
+          <Typography variant="h6">7.2  Composition of Street Name</Typography>
+          <Typography>
+            The full street name shall consist of following components based on the order or function of the
+            streets.
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">First Order Streets: </span> Pre-directions are assigned for first order/ baseline streets to distinguish it from the rest of the
+            streets. These should not be assigned the quadrants as those were the basis on which the quadrants.
+            were formed.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">Second Order Streets:
+            </span> The primary streets apart from the baselines and caters to bigger catchments fall in this category.
+            The type assigned is Lam and it must reflect the quadrant that the stretch falls in
+          </Typography>
+          <br></br>
+          <Typography>
+            <span class="highlight">Third Order Streets:
+            </span> Those streets that are relatively short and usually branch out from the main street fall in this
+            category. The parent street (Lam) is segmented into 50m stretches for which reserved numbers
+            were generated as provisions for future road extensions.
+            The name of the Zur Lam is subsequently inherited from the parent street (Lam) and the number
+            is assigned based on the provision kept.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">Fourth Order Streets:
+            </span>Streets that branch out further from the Zur Lam are assigned suffixes while the number is
+            inherited from the parent Zur Lam.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">Fifth Order Streets:
+            </span>Streets that branch out further from the fourth order streets are considered as the access road.
+            Fifth order streets have no street names.
+          </Typography>
         </section>
       </div>
     );

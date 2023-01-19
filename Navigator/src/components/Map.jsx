@@ -79,6 +79,10 @@ export default class Map extends React.Component {
         type: 'geojson',
         data: 'data/street.geojson',
       });
+      this.map.addSource('name', {
+        type: 'geojson',
+        data: 'data/street.geojson',
+      });
 
 
       this.map.addLayer({
@@ -142,6 +146,17 @@ export default class Map extends React.Component {
         source: 'type',
         paint: {
           'line-color': ['get', 'zcolor'],
+          'line-opacity': 1,
+          'line-width': 2,
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'name',
+        type: 'line',
+        source: 'name',
+        paint: {
+          'line-color': ['get', 'color'],
           'line-opacity': 1,
           'line-width': 2,
         },

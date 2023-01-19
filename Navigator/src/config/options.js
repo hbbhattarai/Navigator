@@ -62,6 +62,10 @@ const chapters = {
         id: 'type',
         opacity: 0,
       },
+      {
+        id: 'name',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -99,6 +103,10 @@ const chapters = {
       },
       {
         id: 'type',
+        opacity: 0,
+      },
+      {
+        id: 'name',
         opacity: 0,
       },
     ],
@@ -140,6 +148,10 @@ const chapters = {
         id: 'type',
         opacity: 0,
       },
+      {
+        id: 'name',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -177,6 +189,10 @@ const chapters = {
       },
       {
         id: 'type',
+        opacity: 0,
+      },
+      {
+        id: 'name',
         opacity: 0,
       },
     ],
@@ -218,6 +234,10 @@ const chapters = {
         id: 'type',
         opacity: 1,
       },
+      {
+        id: 'name',
+        opacity: 0,
+      },
     ],
     layout: [
       {
@@ -230,6 +250,49 @@ const chapters = {
       center: [90.48732307977042, 26.872462554684148],
       zoom: 13,
       pitch: 30,
+      bearing: 0.13,
+      duration: 800,
+      essential: true
+    },
+  },
+  name: {
+    paint: [
+      {
+        id: 'boundary',
+        opacity: 0,
+      },
+      {
+        id: 'baseline',
+        opacity: 0,
+      },
+      {
+        id: 'quadrant',
+        opacity: 0,
+      },
+      {
+        id: 'order',
+        opacity: 0,
+      },
+      {
+        id: 'type',
+        opacity: 0,
+      },
+      {
+        id: 'name',
+        opacity: 1,
+      },
+    ],
+    layout: [
+      {
+        id: 'labels',
+        visibility: 'none',
+      },
+
+    ],
+    location: {
+      center: [90.48732307977042, 26.872462554684148],
+      zoom: 13,
+      pitch: 0,
       bearing: 0.13,
       duration: 800,
       essential: true
@@ -337,6 +400,17 @@ const tooltipConfig = {
     ],
 
   },
+  name: {
+    layer: 'name',
+    features: [
+      {
+        label: '',
+        value: 'Street',
+        type: 'inline',
+      },
+    ],
+
+  },
 
 };
 
@@ -358,6 +432,7 @@ const chapterLayers = {
   quadrant: ['quadrant'],
   order: ['order'],
   type: ['type'],
+  name: ['name'],
 };
 
 
