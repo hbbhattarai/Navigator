@@ -156,6 +156,7 @@ export default class Map extends React.Component {
         source: 'reference',
         layout: {
           'icon-image': 'marker',
+          'icon-size': 4,
           "icon-allow-overlap": true,
         },
         paint: {
