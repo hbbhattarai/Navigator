@@ -120,26 +120,14 @@ const Legend = (props) => {
     legend = legendOptions[layers[0]];
   }
 
-  if (legend.range) {
+  if (legend) {
     return (
       <Paper className={classes.container}>
         <Typography variant="caption" className={classes.labelStyle}>{legend.name}</Typography>
         <ul>
-          <li className="min">
-            <Typography variant="overline">
-              {legend.range && <span>&lt; </span>}
-              {legend.min}
-            </Typography>
-          </li>
-          <li className="max">
-            <Typography variant="overline">
-              {legend.max}
-              {legend.range && <span>+</span>}
-            </Typography>
-          </li>
           <li className="graph">
             <div className="colors">
-              <div style={{ width: '100%', background: `linear-gradient(to right, ${legend.colors.join(',')})` }} />
+              <div style={{ width: '100%', background: `linear-gradient(to right, ${legend.colors})` }} />
             </div>
           </li>
         </ul>
@@ -147,7 +135,7 @@ const Legend = (props) => {
     );
   }
 
-  if (!legend.range) {
+  if (!legend) {
     return  null
   }
 };

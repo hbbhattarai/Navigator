@@ -18,8 +18,8 @@ export default class App extends React.Component {
   updateChapter = (chapterName) => {
     let { layer } = this.state;
 
-    if (chapterName === 'land') {
-      layer = 'land';
+    if (chapterName === 'goals') {
+      layer = 'goals';
     }
 
     this.setState({

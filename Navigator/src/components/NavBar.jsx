@@ -18,7 +18,7 @@ const NavBar = (props) => {
       <AppBar position="static" className={classes.appbar} color="primary">
         <Toolbar>
           <Typography variant="title" color="inherit">
-            Finders of Gelephu
+            Navigator | Addressing Guidelines
           </Typography>
         </Toolbar>
       </AppBar>

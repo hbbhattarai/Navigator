@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl';
 import Legend from './Legend';
 import MapTooltip from './MapTooltip';
+import Directions from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 import {
   chapters, tooltipConfig,
 } from '../config/options';
@@ -15,8 +17,8 @@ export default class Map extends React.Component {
     super(props);
     this.state = {
       lat: 26.8725,
-      lng: 90.49,
-      zoom: 14.2,
+      lng: 90.48,
+      zoom: 13.6,
     };
   }
 
@@ -33,15 +35,20 @@ export default class Map extends React.Component {
       style: 'mapbox://styles/geo-dev/clc4hce1q004414oxltynf3c6',
       center: [lng, lat],
       zoom,
-      minZoom: 12,
-      maxZoom: 19,
-      pitch: 60,
-      bearing: 0.13,
-      essential: true
+      minZoom: 13,
+      maxZoom: 30,
+      pitch: 60
+    });
+
+    var directions = new Directions({
+      accessToken: 'pk.eyJ1IjoiZ2VvLWRldiIsImEiOiJjbGJ4NjFrN2UxM3hiNDBueWhwa3E1NHQxIn0.vZnv3suu2YhqqiKFvSH3lw',
+      unit: 'metric',
+      profile: 'mapbox/cycling'
     });
 
 
     this.map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+    this.map.addControl(directions, 'top-left');
 
 
     this.map.on('style.load', () => {
@@ -51,9 +58,26 @@ export default class Map extends React.Component {
         data: 'data/gelephu_boundary.geojson',
       });
 
-      this.map.addSource('elevation', {
+      this.map.addSource('baseline', {
         type: 'geojson',
-        data: 'data/landelevation.geojson',
+        data: 'data/baseline.geojson',
+      });
+
+      this.map.addSource('reference', {
+        type: 'geojson',
+        data: 'data/reference.geojson',
+      });
+      this.map.addSource('quadrant', {
+        type: 'geojson',
+        data: 'data/quadrant.geojson',
+      });
+      this.map.addSource('order', {
+        type: 'geojson',
+        data: 'data/street.geojson',
+      });
+      this.map.addSource('type', {
+        type: 'geojson',
+        data: 'data/street.geojson',
       });
 
 
@@ -64,105 +88,131 @@ export default class Map extends React.Component {
         paint: {
           'line-color': '#090909',
           'line-opacity': 0.5,
+          'line-width': 1,
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'baseline',
+        type: 'line',
+        source: 'baseline',
+        paint: {
+          'line-color': '#E13A16',
+          'line-opacity': 0.7,
+          'line-width': 3,
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'quadrant',
+        type: 'fill',
+        source: 'quadrant',
+        paint:  {
+          'fill-color': {
+            property: 'code',
+            stops: [
+              [1, '#F99B37'],
+              [2, '#7fcdbb'],
+              [3, '#41b6c4'],
+              [4, '#1d91c0'],
+            ],
+          },
+          'fill-opacity': 0,
+          'fill-opacity-transition': {
+            duration: 800,
+            delay: 0,
+          },
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'order',
+        type: 'line',
+        source: 'order',
+        paint: {
+          'line-color': ['get', 'color'],
+          'line-opacity': 1,
           'line-width': 2,
         },
       }, 'waterway');
 
-      // this.map.addLayer({
-      //   id: 'landelevation3d',
-      //   type: 'fill-extrusion',
-      //   source: 'elevation',
-      //   paint: {
-      //     'fill-extrusion-color': {
-      //       property: 'value',
-      //       stops: [
-      //         [100, '#ffffcc'],
-      //         [150, '#7fcdbb'],
-      //         [200, '#41b6c4'],
-      //         [250, '#1d91c0'],
-      //       ],
-      //     },
-      //     'fill-extrusion-height': ['*', 0.1, ['number', ['get', 'value'], 1]],
-      //     'fill-extrusion-opacity': 0.5,
-      //     'fill-extrusion-opacity-transition': {
-      //       duration: 1000,
-      //       delay: 0,
-      //     },
-      //   },
-      // }, 'waterway');
+      this.map.addLayer({
+        id: 'type',
+        type: 'line',
+        source: 'type',
+        paint: {
+          'line-color': ['get', 'zcolor'],
+          'line-opacity': 1,
+          'line-width': 2,
+        },
+      }, 'waterway');
 
 
+      
+      
+      this.map.addLayer({
+        id: 'reference',
+        type: 'symbol',
+        source: 'reference',
+        layout: {
+          'icon-image': 'marker',
+          "icon-allow-overlap": true,
+        },
+        paint: {
+          "icon-color": "#00ff00",
+          "icon-halo-color": "#fff",
+          "icon-halo-width": 4
+        },
+      }, 'waterway');
 
-      // this.map.addLayer({
-      //   id: 'landelevation',
-      //   type: 'fill',
-      //   source: 'elevation',
-      //   paint: {
-      //     'fill-color': {
-      //       property: 'value',
-      //       stops: [
-      //         [100, '#ffffcc'],
-      //         [150, '#7fcdbb'],
-      //         [200, '#41b6c4'],
-      //         [250, '#1d91c0'],
-      //       ],
-      //     },
-      //     'fill-opacity': 0,
-      //     'fill-opacity-transition': {
-      //       duration: 800,
-      //       delay: 0,
-      //     },
-      //   },
-      // }, 'waterway');
-
-      // this.map.addLayer({
-      //   id: 'labels',
-      //   type: 'symbol',
-      //   source: {
-      //     type: 'geojson',
-      //     data: {
-      //       type: 'FeatureCollection',
-      //       features: [{
-      //         type: 'Feature',
-      //         properties: {
-      //           name: 'Municipal Office',
-      //           size: 8,
-      //           marker: 'marker',
-      //         },
-      //         geometry: {
-      //           type: 'Point',
-      //           coordinates: [90.48, 26.87],
-      //         },
-      //       },
-      //       {
-      //         type: 'Feature',
-      //         properties: {
-      //           name: 'CRRH',
-      //           size: 12,
-      //           marker: 'hospital',
-      //         },
-      //         geometry: {
-      //           type: 'Point',
-      //           coordinates: [90.490, 26.874],
-      //         },
-      //       }],
-      //     },
-      //   },
-      //   layout: {
-      //     'icon-image': ['get', 'marker'],
-      //     'text-field': '{name}',
-      //     'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
-      //     'text-size': ['get', 'size'],
-      //     'text-transform': 'uppercase',
-      //     'text-letter-spacing': 0.05,
-      //     'text-offset': [0, 1.5],
-      //   },
-      //   paint: {
-      //     'text-color': '#7a7a78',
-      //     'text-halo-color': '#f9f6e7',
-      //     'text-halo-width': 1,
-      //   },
-      // });
+      this.map.addLayer({
+        id: 'labels',
+        type: 'symbol',
+        source: {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: [{
+              type: 'Feature',
+              properties: {
+                name: 'Municipal Office',
+                size: 8,
+                marker: 'marker',
+              },
+              geometry: {
+                type: 'Point',
+                coordinates: [90.48, 26.87],
+              },
+            },
+            {
+              type: 'Feature',
+              properties: {
+                name: 'CRRH',
+                size: 12,
+                marker: 'hospital',
+              },
+              geometry: {
+                type: 'Point',
+                coordinates: [90.490, 26.874],
+              },
+            }],
+          },
+        },
+        layout: {
+          'icon-image': ['get', 'marker'],
+          'text-field': '{name}',
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+          'text-size': ['get', 'size'],
+          'text-transform': 'uppercase',
+          'text-letter-spacing': 0.05,
+          'text-offset': [0, 1.5],
+        },
+        paint: {
+          'text-color': '#7a7a78',
+          'text-halo-color': '#f9f6e7',
+          'text-halo-width': 1,
+        },
+      });
     });
 
 
@@ -201,12 +251,11 @@ export default class Map extends React.Component {
 
     if (this.map.isStyleLoaded()) {
       if (nextProps.chapterName !== chapterName) {
-
         const { paint, layout, location } = chapters[nextProps.chapterName]; // eslint-disable-line
         paint.forEach((data) => {
           const currentLayer = this.map.getLayer(data.id);
-
           if (currentLayer !== undefined) {
+           
             const layerType = currentLayer.type;
             this.map.setPaintProperty(data.id, `${layerType}-opacity`, data.opacity);
           }
@@ -251,8 +300,8 @@ export default class Map extends React.Component {
   render() {
     const mapStyle = {
       position: 'fixed',
-      width: '70%',
-      left: '30%',
+      width: '63%',
+      left: '32%',
       top: 0,
       bottom: 0,
     };
