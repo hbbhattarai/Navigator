@@ -318,15 +318,17 @@ export default class Panel extends React.Component {
             streets. These should not be assigned the quadrants as those were the basis on which the quadrants.
             were formed.
             <br />
-            <span class="highlight">   W Ngojang Zhung Lam</span>
+            <span class="highlight">   W Ngojang Zhung Lam :</span>
             It may be noted that the Ngojang Zhung Lam is a baseline connecting the reference points and
             moving towards the west from the reference point.
           </Typography>
           <br />
           <Typography>
             <span class="highlight">Second Order Streets:
-            </span> The primary streets apart from the baselines and caters to bigger catchments fall in this category.
+            </span>
+            The primary streets apart from the baselines and caters to bigger catchments fall in this category.
             The type assigned is Lam and it must reflect the quadrant that the stretch falls in.
+            <br />
             <span class="highlight">  Gatshel Lam SE</span>
             <br />
 
@@ -347,8 +349,12 @@ export default class Panel extends React.Component {
             <br />
             It may be noted that the Chhogyal Zur Lam 1 SE is a secondary street connecting the main
             street Chhogyal Lam SE on segment number 1 and falls in the south east quadrant.
-
+            <br />
+            If there is more than one Zur Lam on the parent street, this streets may have names of the parent street with suffix of dzongkhag alphabet.
+            <br />
+            <span class="highlight">Chhogyal Zur Lam 1 Kaa SE</span>
           </Typography>
+
           <br />
           <Typography>
             <span class="highlight">Fourth Order Streets:
@@ -365,7 +371,14 @@ export default class Panel extends React.Component {
             <span class="highlight">Fifth Order Streets:
             </span>Streets that branch out further from the fourth order streets are considered as the access road.
             Fifth order streets have no street names.
-
+            <br />
+            OR
+            <br />
+            Some of this street may have names of the parent street with suffix of dzongkhag alphabet.
+            <br />
+            <span class="highlight">Losel Zur Lam 1A Kaa SE</span>
+            <br />
+            It may be noted that the Losel Zur Lam 1A Kaa SE is a first fifth order street connecting the fourth order street Losel Zur Lam 1A SE  and falls in the south east quadrant.
           </Typography>
         </section>
         <section id="plot">

@@ -83,6 +83,14 @@ export default class Map extends React.Component {
         type: 'geojson',
         data: 'data/street.geojson',
       });
+      this.map.addSource('plot', {
+        type: 'geojson',
+        data: 'data/plot.geojson',
+      });
+      this.map.addSource('building', {
+        type: 'geojson',
+        data: 'data/building.geojson',
+      });
 
 
       this.map.addLayer({
@@ -111,7 +119,7 @@ export default class Map extends React.Component {
         id: 'quadrant',
         type: 'fill',
         source: 'quadrant',
-        paint:  {
+        paint: {
           'fill-color': {
             property: 'code',
             stops: [
@@ -121,6 +129,34 @@ export default class Map extends React.Component {
               [4, '#1d91c0'],
             ],
           },
+          'fill-opacity': 0,
+          'fill-opacity-transition': {
+            duration: 800,
+            delay: 0,
+          },
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'plot',
+        type: 'fill',
+        source: 'plot',
+        paint: {
+          'fill-color': '#F99B37',
+          'fill-opacity': 0,
+          'fill-opacity-transition': {
+            duration: 800,
+            delay: 0,
+          },
+        },
+      }, 'waterway');
+
+      this.map.addLayer({
+        id: 'building',
+        type: 'fill',
+        source: 'building',
+        paint: {
+          'fill-color': '#808080',
           'fill-opacity': 0,
           'fill-opacity-transition': {
             duration: 800,
@@ -145,7 +181,7 @@ export default class Map extends React.Component {
         type: 'line',
         source: 'type',
         paint: {
-          'line-color': ['get', 'zcolor'],
+          'line-color': ['get', 'z_color'],
           'line-opacity': 1,
           'line-width': 2,
         },
@@ -162,9 +198,6 @@ export default class Map extends React.Component {
         },
       }, 'waterway');
 
-
-      
-      
       this.map.addLayer({
         id: 'reference',
         type: 'symbol',
@@ -271,7 +304,7 @@ export default class Map extends React.Component {
         paint.forEach((data) => {
           const currentLayer = this.map.getLayer(data.id);
           if (currentLayer !== undefined) {
-           
+
             const layerType = currentLayer.type;
             this.map.setPaintProperty(data.id, `${layerType}-opacity`, data.opacity);
           }

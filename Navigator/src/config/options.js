@@ -28,6 +28,10 @@ const chapters = {
         opacity: 0,
       },
       {
+        id: 'plotNumber',
+        opacity: 0,
+      },
+      {
         id: 'building',
         opacity: 0,
       },
@@ -76,6 +80,10 @@ const chapters = {
       },
       {
         id: 'plot',
+        opacity: 0,
+      },
+      {
+        id: 'plotNumber',
         opacity: 0,
       },
       {
@@ -382,7 +390,7 @@ const chapters = {
       },
       {
         id: 'plot',
-        opacity: 0,
+        opacity: 1,
       },
       {
         id: 'building',
@@ -437,7 +445,7 @@ const chapters = {
       },
       {
         id: 'building',
-        opacity: 0,
+        opacity: 1,
       },
     ],
     layout: [
@@ -570,11 +578,11 @@ const tooltipConfig = {
 
   },
   plot: {
-    layer: 'plot',
+    layer: 'plotNumber',
     features: [
       {
         label: '',
-        value: 'Address',
+        value: 'B_Number',
         type: 'inline',
       },
     ],
@@ -585,7 +593,7 @@ const tooltipConfig = {
     features: [
       {
         label: '',
-        value: 'Address',
+        value: ['Address'],
         type: 'inline',
       },
     ],
@@ -597,11 +605,11 @@ const tooltipConfig = {
 const legendOptions = {
   order: {
     name: ['  ORD1  ','  | ','  ORD2  ',' |  ','  ORD3  ', ' |  ','  ORD4  ',' |  ','   ORD5  '],
-    colors: ['#EC581C','#FEFCFC' ,'#ECB01C','#FEFCFC' ,'#1298F0','#FEFCFC' ,'#12F016','#FEFCFC' , '#2F312F'],
+    colors: ['#F99B37','#FEFCFC' ,'#7fcdbb','#FEFCFC' ,'#41b6c4','#FEFCFC' ,'#1d91c0','#FEFCFC' , '#808080'],
   },
   type: {
     name: ['  Zhung Lam  ','  | ','  Lam  ',' |  ','  Zur Lam  ','  | ','   ACC  '],
-    colors: ['#0F72F0','#FEFCFC' ,'#0FEDF0','#FEFCFC' ,'#EC644B','#FEFCFC' , '#DAA919'],
+    colors: ['#7fcdbb','#FEFCFC' ,'#F99B37','#FEFCFC' ,'#1d91c0','#FEFCFC' , '#808080'],
   },
 };
 
