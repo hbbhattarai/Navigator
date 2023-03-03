@@ -456,8 +456,8 @@ const chapters = {
 
     ],
     location: {
-      center: [90.48732307977042, 26.872462554684148],
-      zoom: 13,
+      center: [90.48651,26.86885],
+      zoom: 17,
       pitch: 0,
       bearing: 0.13,
       duration: 800,

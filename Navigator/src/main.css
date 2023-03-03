@@ -18,6 +18,7 @@ section {
   font-size: 13px;
   min-height: 90vh;
 }
+
 section.active {
   opacity: 1;
 }
@@ -103,4 +104,14 @@ a {
 
 .highlight {
   color: tomato;
+}
+
+.donate{
+  text-align: center;
+  letter-spacing:normal;
+  line-height: 0.8;
+  font-size: 14;
+  font-weight: 300;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: skyblue;
 }

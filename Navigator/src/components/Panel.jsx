@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { chapters } from '../config/options';
 import logo from '../../data/assets/logo.png';
-import precip from '../../data/assets/precip.png';
-import hindu from '../../data/assets/hindu.jpeg';
+import fund from '../../data/assets/mbob.jpg';
 
 export default class Panel extends React.Component {
   constructor(props) {
@@ -456,6 +455,29 @@ export default class Panel extends React.Component {
             <span class="highlight">3. </span> If building has multiple entrance, the entrance facing the highest order street will be
             considered as main entrance.
           </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">4. </span> If there is multiple building in same plot than the building number will be the plot number followed by suffix of English alphabet which would be assign based on the year of construction.
+          </Typography>
+          <br />
+          <Typography>
+            <span class="highlight">5. </span> In case of institution, the building number will be the plot number followed by suffix of English alphabet.
+          </Typography>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Typography variant="h4">Help me to host</Typography>
+          <br></br>
+          <Typography>
+            <Typography  class="donate"> Scan & Pay </Typography>
+            <Typography class="donate">through</Typography>
+            <Typography class="donate">goBoB or mBoB</Typography>
+            <br />
+          </Typography>
+          <img class="figure" src={fund} alt="Fund"></img>
+          <br></br>
           <br></br>
         </section>
       </div>
