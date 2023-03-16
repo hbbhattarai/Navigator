@@ -54,6 +54,19 @@ export default class Panel extends React.Component {
   render() {
     return (
       <div id="features" onScroll={this.handleScroll}>
+          <section id="gelephu" className="active">
+
+          <br></br>
+          <br></br>
+          <Typography variant="h4"> <span class="highlight">102 Phendey Lam </span> </Typography>
+          <br></br>
+          <br></br>
+          <Typography variant="h4">Answering where ??? </Typography>
+          <br></br>
+          <Typography variant="h6">Way Towards Building Address</Typography>
+        
+          <br></br>
+        </section>
         <section id="gelephu" className="active">
           <Typography variant="h4">INTRODUCTION</Typography>
           <br></br>
