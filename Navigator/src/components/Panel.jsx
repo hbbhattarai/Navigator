@@ -464,20 +464,6 @@ export default class Panel extends React.Component {
             <span class="highlight">5. </span> In case of institution, the building number will be the plot number followed by suffix of English alphabet.
           </Typography>
           <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <Typography variant="h4">Help me to host</Typography>
-          <br></br>
-          <Typography>
-            <Typography  class="donate"> Scan & Pay </Typography>
-            <Typography class="donate">through</Typography>
-            <Typography class="donate">goBoB or mBoB</Typography>
-            <br />
-          </Typography>
-          <img class="figure" src={fund} alt="Fund"></img>
-          <br></br>
           <br></br>
         </section>
       </div>
