@@ -58,10 +58,10 @@ export default class Panel extends React.Component {
 
           <br></br>
           <br></br>
-          <Typography variant="h4"> <span class="highlight">102 Phendey Lam </span> </Typography>
+          <Typography variant="h4"> <span class="highlight">102, Phendey Lam, Gelephu ,Sarpang </span> </Typography>
           <br></br>
           <br></br>
-          <Typography variant="h4">Answering where ??? </Typography>
+          <Typography variant="h1">Where ??? </Typography>
           <br></br>
           <Typography variant="h6">Way Towards Building Address</Typography>
         
@@ -142,6 +142,43 @@ export default class Panel extends React.Component {
           </Typography>
           <br></br>
         </section>
+        <section id="goals">
+          <Typography variant="h4">Outline of Addressing Methodlogy</Typography>
+          <br></br>
+          <Typography variant="h6">3.1 Establishing the a reference point</Typography>
+          <br></br>
+          <Typography variant="h6">3.2  Establishing the a baselines</Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.3  Assigning Quadrants
+          </Typography >
+          <br></br>
+          <Typography variant="h6">
+            3.4  Assigning each street an street order
+          </Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.5  Assigning Pre-dirction to Baseline Streets
+          </Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.6  Assigning Street type to each Streets
+          </Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.7  Street Naming
+          </Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.9  Plot Numbering
+          </Typography>
+          <br></br>
+          <Typography variant="h6">
+            3.10  Assign address to building
+          </Typography>
+          <br></br>
+        </section>
+
         <section id="reference">
           <Typography variant="h4">REFERENCE POINT & BASELINES</Typography>
           <br></br>
@@ -361,6 +398,8 @@ export default class Panel extends React.Component {
             <br />
             It may be noted that the Chhogyal Zur Lam 1 SE is a secondary street connecting the main
             street Chhogyal Lam SE on segment number 1 and falls in the south east quadrant.
+            <br />
+            OR
             <br />
             If there is more than one Zur Lam on the parent street, this streets may have names of the parent street with suffix of dzongkhag alphabet.
             <br />
