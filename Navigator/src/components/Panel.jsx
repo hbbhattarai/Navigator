@@ -142,7 +142,7 @@ export default class Panel extends React.Component {
           </Typography>
           <br></br>
         </section>
-        <section id="goals">
+        <section id="gelephu">
           <Typography variant="h4">Outline of Addressing Methodlogy</Typography>
           <br></br>
           <Typography variant="h6">3.1 Establishing the a reference point</Typography>
